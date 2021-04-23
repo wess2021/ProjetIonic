@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Employe</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">STT</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/home">Home</a>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Materials
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+            <li><a class="dropdown-item" href="materials">liste materials</a></li>
+            <li><a class="dropdown-item" href="add-material">Add material</a></li>
+           
+            
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Employers
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+            <li><a class="dropdown-item" href="employe">liste employers</a></li>
+            <li><a class="dropdown-item" href="add-employe">Add employer</a></li>
+           
+            
+          </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About us</a>
+          </li>
+        
+      </ul>
+    
+    </div>
+  </div>
+</nav>
+<br><br>
+<ion-content>
+  
+  <form [formGroup]="add">
+    <div class="form-group row ">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control" id="inputEmail3" placeholder="Name" formControlName="name"/>
+    <!---->
+      <small class="text-danger" *ngIf=" add.get('name').hasError('required')">this field is required</small>
+      <small class="text-danger" *ngIf=" add.get('name').hasError('minlength')">this minimum length  3 characteres</small>
+      <small class="text-danger" *ngIf=" add.get('name').hasError('maxlength')">the max legth is   30 characteres</small>
+    </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+    <input type="email" class="form-control" id="inputEmail3" placeholder="Email" formControlName="email"/>
+    <small class="text-danger" *ngIf=" add.get('email').hasError('required')">this field is required</small>
+      <small class="text-danger" *ngIf=" add.get('email').hasError('email')">you need to enter exemple@gmail</small>
+      
+    </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Job</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="job" formControlName="job"/>
+      <small class="text-danger" *ngIf=" add.get('job').hasError('required')">this field is required</small>
+      
+    </div>
+    </div>
+    <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-primary" [disabled]="add.invalid" (click)="onadd()" >Add Employe</button>
+    </div>
+    </div>
+  </form>
+</ion-content>
+
+
+
+<ion-content>
+
+</ion-content>

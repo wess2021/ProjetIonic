@@ -1,19 +1,10 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-     Home
-    </ion-title>
+    <ion-title>add-material</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="background">
-
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Home</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
+<ion-content>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
@@ -57,23 +48,44 @@
       </div>
     </div>
   </nav>
-  <ion-card class="background">
-
-
-
-
-    <ion-card-header  >
-     
-      <ion-card-title> <h1 class="hd">Socièté Tunisie Travaux</h1></ion-card-title>
-      <div class="hd"><img src="assets/home.png" width="1000" height="1000"></div>
-    </ion-card-header>
-  </ion-card>
-
-
- 
-  <br>
+  <br><br>
+  <ion-content>
+    
+    <form [formGroup]="add">
+      <div class="form-group row ">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+      <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="Name" formControlName="name"/>
+      <!---->
+        <small class="text-danger" *ngIf=" add.get('name').hasError('required')">this field is required</small>
+        <small class="text-danger" *ngIf=" add.get('name').hasError('minlength')">this minimum length  3 characteres</small>
+        <small class="text-danger" *ngIf=" add.get('name').hasError('maxlength')">the max legth is   30 characteres</small>
+      </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Matricule</label>
+      <div class="col-sm-10">
+      <input type="email" class="form-control" id="inputEmail3" placeholder="matricule" formControlName="matricule"/>
+      <small class="text-danger" *ngIf=" add.get('matricule').hasError('required')">this field is required</small>
+    
+        
+      </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">carte_grise</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="inputEmail3" placeholder="carte_grise" formControlName="carte_grise"/>
+        <small class="text-danger" *ngIf=" add.get('carte_grise').hasError('required')">this field is required</small>
+        
+      </div>
+      </div>
+      <div class="form-group row">
+      <div class="col-sm-10">
+        <button type="submit" class="btn btn-primary" [disabled]="add.invalid" (click)="onadd()" >Add Material</button>
+      </div>
+      </div>
+    </form>
+  </ion-content>
   
   
-
-
 </ion-content>

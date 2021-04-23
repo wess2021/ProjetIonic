@@ -1,0 +1,84 @@
+{
+  "employes": [
+    {
+      "id": 1,
+      "name": "wess",
+      "email": "abidoussama2015@gmail.com",
+      "job": "technicien"
+    },
+    {
+      "id": 4,
+      "name": "Kavitha Kumar",
+      "email": "email@email.com",
+      "job": "Ingénieur"
+    },
+    {
+      "id": 5,
+      "name": "John Snow",
+      "email": "email@email.com",
+      "job": "Ingénieur"
+    },
+    {
+      "id": 6,
+      "name": "Priya Dutt",
+      "email": "email@email.com",
+      "job": "Ingénieur"
+    },
+    {
+      "id": 7,
+      "name": "bechir hssan",
+      "email": "abido@gmail.com",
+      "job": "Ouvrier"
+    },
+    {
+      "name": "bechir hssan",
+      "email": "abido@gmail.com",
+      "job": "technicien",
+      "id": 8
+    },
+    {
+      "name": "hssan hmed",
+      "email": "hssan@gmail.com",
+      "job": "technicien",
+      "id": 9
+    },
+    {
+      "name": "ali abid",
+      "email": "ali@gmail.com",
+      "job": "matere finance",
+      "id": 10
+    },
+    {
+      "name": "becha",
+      "email": "becha@gmail.com",
+      "job": "directeur",
+      "id": 11
+    },
+    {
+      "id": 12,
+      "name": "sdssrrs",
+      "email": "sqsq@gmail.com",
+      "job": "Ouvrier"
+    }
+  ],
+  "materials": [
+    {
+      "id": 2,
+      "name": "renault206",
+      "matricule": "123tunis12457",
+      "carte_grise": "789456123"
+    },
+    {
+      "id": 3,
+      "name": "peugeot206",
+      "matricule": "127tunis13456",
+      "carte_grise": "12365478"
+    },
+    {
+      "name": "gradeur",
+      "matricule": "122tunis1236",
+      "carte_grise": "12365445",
+      "id": 4
+    }
+  ]
+}

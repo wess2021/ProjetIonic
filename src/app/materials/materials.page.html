@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>materials</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">STT</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/home">Home</a>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Materials
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+            <li><a class="dropdown-item" href="materials">liste materials</a></li>
+            <li><a class="dropdown-item" href="add-material">Add material</a></li>
+           
+            
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Employers
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+            <li><a class="dropdown-item" href="employe">liste employers</a></li>
+            <li><a class="dropdown-item" href="add-employe">Add employer</a></li>
+           
+            
+          </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About us</a>
+          </li>
+        
+      </ul>
+    
+    </div>
+  </div>
+</nav>
+<br><br>
+<ion-content>
+  <ion-button href="/search">search</ion-button>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">name</th>
+      <th scope="col">matricule</th>
+      <th scope="col">Carte_grise</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of materialsData;index as i">
+      <th scope="row">{{i+1}}</th>
+      <td>{{item.name}}</td>
+      <td>{{item.matricule}}</td>
+      <td>{{item.carte_grise}}</td>
+      
+      
+     <td>
+        <button type="button" class="btn btn-outline-success" (click)="edit(item.id)">Edit</button>
+        <button type="button" class="btn btn-outline-danger" (click)="delete(item)">Delete</button>
+        <button type="button" class="btn btn-outline-info" (click)="detail(item.id)">Details</button>
+        <button type="button" class="btn btn-outline-info" (click)="materielChanged(item.id)">Details</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<ion-button href="/add-material">Add material</ion-button>
+
+</ion-content>
